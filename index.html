@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Interactiva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Página Principal -->
+        <div id="main-page">
+            <h1>Galería de Categorías</h1>
+            <button class="category-btn" onclick="showSubcategories('brynn')">Brynn</button>
+            <button class="category-btn" onclick="showSubcategories('galaden')">Galaden</button>
+            <button class="category-btn" onclick="showSubcategories('syrus')">Syrus</button>
+            <button class="category-btn" onclick="showSubcategories('vaerix')">Vaerix</button>
+            <button class="category-btn" onclick="showSubcategories('kehli')">Kehli</button>
+            <button class="category-btn" onclick="showSubcategories('venturoso')">Venturoso</button>
+        </div>
+
+        <!-- Subcategorías de Brynn -->
+        <div id="brynn-subcategories" class="subcategory-page" style="display:none;">
+            <h2>Subcategorías de Brynn</h2>
+            <button class="subcategory-btn" onclick="showElements('espadas')">Espadas</button>		
+            <button class="subcategory-btn" onclick="showElements('martillos')">Martillos</button>
+            <button onclick="backToCategories()">Volver a Categorías</button>
+        </div>
+		
+		<!-- Subcategorías de Syrus -->
+		<div id="syrus-subcategories" class="subcategory-page" style="display:none;">
+			<h2>Subcategorías de Syrus</h2>
+		<button class="subcategory-btn" onclick="showElements('bastones-syrus')">Bastones</button>
+		<button class="subcategory-btn" onclick="showElements('varitas-syrus')">Varitas</button>
+		<button onclick="backToCategories()">Volver a Categorías</button>
+		</div>
+		
+		<!-- Subcategorías de Galaden -->
+		<div id="galaden-subcategories" class="subcategory-page" style="display:none;">
+			<h2>Subcategorías de Galaden</h2>
+		<button class="subcategory-btn" onclick="showElements('hojas-galaden')">Hojas</button>
+		<button class="subcategory-btn" onclick="showElements('arcos-galaden')">Arcos</button>
+		<button onclick="backToCategories()">Volver a Categorías</button>
+		</div>
+
+		<!-- Subcategorías de Vaerix -->
+		<div id="vaerix-subcategories" class="subcategory-page" style="display:none;">
+			<h2>Subcategorías de Vaerix</h2>
+		<button class="subcategory-btn" onclick="showElements('campanas-vaerix')">Campanas</button>
+		<button class="subcategory-btn" onclick="showElements('lanzas-vaerix')">Lanzas</button>
+		<button onclick="backToCategories()">Volver a Categorías</button>
+		</div>
+		
+		<!-- Subcategorías de Kehli -->
+		<div id="kehli-subcategories" class="subcategory-page" style="display:none;">
+			<h2>Subcategorías de Kehli</h2>
+		<button class="subcategory-btn" onclick="showElements('martillos-kehli')">Martillos</button>
+		<button class="subcategory-btn" onclick="showElements('ballestas-kehli')">Ballestas</button>
+		<button onclick="backToCategories()">Volver a Categorías</button>
+		</div>
+	
+		<!-- Subcategorías de Venturoso -->
+		<div id="venturoso-subcategories" class="subcategory-page" style="display:none;">
+			<h2>Subcategorías de Venturoso</h2>
+		<button class="subcategory-btn" onclick="showElements('guanteletes-venturoso')">Guanteletes</button>
+		<button class="subcategory-btn" onclick="showElements('cuchillos-venturoso')">Cuchillos</button>
+		<button onclick="backToCategories()">Volver a Categorías</button>
+		</div>
+
+        <!-- Sección de Elementos (oculta por defecto) -->
+        <div id="espadas" class="element-page" style="display:none;">
+            <h2>Elementos de Espadas</h2>
+			 <div class="element">
+                <h3>Espadas</h3>
+                <div class="images">
+                    <img src="imagenes/Hoja de Guardián - U.jpg" alt="Hoja de Guardián - U">
+					<img src="imagenes/Hoja Alada - B.jpg" alt="Hoja de Alada - B">
+					<img src="imagenes/Hoja Ancestral - B.jpg" alt="Hoja Ancestral - B">
+					<img src="imagenes/Hoja de la Ciudadela - B.jpg" alt="Hoja Ancestral - B">				
+                </div>
+            </div>
+			<div class="element">
+                <h3>Espadas (Crafteables)</h3>
+                <div class="images">
+                    <img src="imagenes/Hoja de Embestida - U.jpg" alt="Hoja de Embestida - U">				
+                </div>
+            </div>
+			<div class="element">
+                <h3>Guardias</h3>
+                <div class="images">
+                    <img src="imagenes/Guardia de Jinete Norteño - U.jpg" alt="Guardia de Jinete Norteño - U">
+				</div>
+            </div>
+			<div class="element">
+                <h3>Guardias (Crafteables)</h3>
+                <div class="images">
+                    <img src="imagenes/Guardia de Jinete Oriental - B.jpg" alt="Guardia de Jinete Oriental - B">
+                    <img src="imagenes/Guardia de Jinete Oriental - U.jpg" alt="Guardia de Jinete Oriental - U">
+					<img src="imagenes/Guardia de Jinete Occidental - B.jpg" alt="Guardia de Jinete Occidental - B">
+					<img src="imagenes/Guardia de Jinete Occidental - U.jpg" alt="Guardia de Jinete Occidental - U">					
+                </div>
+            </div>
+            <div class="element">
+                <h3>Empuñaduras</h3>
+                <div class="images">
+                    <img src="imagenes/Empuñadura Resolutiva - U.jpg" alt="Empuñadura Resolutiva - U">
+                </div>
+            </div>
+			<div class="element">
+                <h3>Empuñaduras (Crafteables)</h3>
+                <div class="images">
+                    <img src="imagenes/Empuñadura de Conmemoración - B.jpg" alt="Empuñadura de Conmemoración - B">
+                    <img src="imagenes/Empuñadura de Conmemoración - U.jpg" alt="Empuñadura de Conmemoración - U">
+                    <img src="imagenes/Empuñadura Triunfante - B.jpg" alt="Empuñadura Triunfante - B">									
+                </div>
+            </div>
+			<button onclick="backToSubcategories('brynn-subcategories')">Volver a Subcategorías</button>
+        </div>
+
+        <div id="martillos" class="element-page" style="display:none;">
+            <h2>Elementos de Martillos</h2>
+            <div class="element">
+               <h3>Martillos</h3>
+                <div class="images">
+                    <img src="imagenes/Martillo de Guerra Lastrado - U.jpg" alt="Martillo de Guerra Lastrado - U">
+            </div>
+			<div class="element">
+                <h3>Martillos (Crafteables)</h3>
+                <div class="images">
+                    <img src="imagenes/Martillo de Guerra de Mariscal - U.jpg" alt="Martillo de Guerra de Mariscal - U">				
+                </div>
+            </div>
+            <div class="element">
+                <h3>Mangos</h3>
+                <div class="images">
+                    <img src="imagenes/Mango del Hombre Muerto - U.jpg" alt="Mango del Hombre Muerto - U">
+                </div>
+            </div>
+			<div class="element">
+                <h3>Mangos (Crafteables)</h3>
+                <div class="images">
+                    <img src="imagenes/Mango de Escamas de Dragon - B.jpg" alt="Mango de Escamas de Dragon - B">
+                    <img src="imagenes/Mango Fortificado - B.jpg" alt="Mango Fortificado - B">
+                    <img src="imagenes/Mango Fortificado - U.jpg" alt="Mango Fortificado - U">									
+                </div>
+            </div>
+            <div class="element">
+                <h3>Puños</h3>
+                <div class="images">
+                    <img src="imagenes/Puño Reblandecedor - U.jpg" alt="Puño Reblandecedor - U">
+                </div>
+            </div>
+			<div class="element">
+                <h3>Puños (Crafteables)</h3>
+                <div class="images">
+                    <img src="imagenes/Puño de Sahe - B.jpg" alt="Puño de Sahe - B">
+                </div>
+            </div>
+            <button onclick="backToSubcategories('brynn-subcategories')">Volver a Subcategorías</button>
+        </div>
+
+    </div>
+	
+	<!-- Elementos de Bastones - Syrus -->
+<div id="bastones-syrus" class="element-page" style="display:none;">
+    <h2>Elementos de Bastones</h2>
+
+    <div class="element">
+        <h3>Bastones</h3>
+        <div class="images">
+            <img src="imagenes/Baston Retorcido - B.jpg" alt="">
+            <img src="imagenes/Baston Cristalino - U.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="element">
+        <h3>Bastones (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/Baston Retorcido - U.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="element">
+        <h3>Envolturas</h3>
+        <div class="images">
+            <img src="imagenes/Envoltura de Puerto Cano - B.jpg" alt="">
+            <img src="imagenes/Envoltura del Jinete - B.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="element">
+        <h3>Envolturas (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/Envoltura Escarlata - B.jpg" alt="">
+            <img src="imagenes/Envoltura Escarlata - U.jpg" alt="">
+            <img src="imagenes/Envoltura del Jinete - U.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="element">
+        <h3>Infusiones</h3>
+        <div class="images">
+            <img src="imagenes/Infusion Sanguina - U.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="element">
+        <h3>Infusiones (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/Infusion de Tormenta - B.jpg" alt="">
+            <img src="imagenes/Infusion de Abundancia - B.jpg" alt="">
+            <img src="imagenes/Infusion de Abundancia - U.jpg" alt="">
+            <img src="imagenes/Infusion Ambarina - B.jpg" alt="">
+        </div>
+    </div>
+
+    <button onclick="backToSubcategories('syrus-subcategories')">Volver a Subcategorías</button>
+</div>
+
+<!-- Elementos de Varitas - Syrus -->
+<div id="varitas-syrus" class="element-page" style="display:none;">
+    <h2>Elementos de Varitas</h2>
+
+    <div class="element">
+        <h3>Varitas</h3>
+        <div class="images">
+            <img src="imagenes/Varita de Raiz de Roble - B.jpg" alt="">
+            <img src="imagenes/Varita Destellante - U.jpg" alt="">
+            <img src="imagenes/Varita Tocada por las Estrellas - B.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="element">
+        <h3>Varitas (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/Varita de Raiz de Roble - U.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="element">
+        <h3>Envolturas</h3>
+        <div class="images">
+            <img src="imagenes/Envoltura de Veta Plateada - B.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="element">
+        <h3>Envolturas (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/Envoltura del Magister - B.jpg" alt="">
+            <img src="imagenes/Envoltura del Magister - U.jpg" alt="">
+            <img src="imagenes/Envoltura de Veta Plateada - U.jpg" alt="">
+            <img src="imagenes/Envoltura de la Naturaleza - B.jpg" alt="">
+            <img src="imagenes/Envoltura de la Naturaleza - U.jpg" alt="">
+            <img src="imagenes/Envoltura del Cielo Nocturno - B.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="element">
+        <h3>Adornos</h3>
+        <div class="images">
+            <img src="imagenes/Adorno de Garra - B.jpg" alt="">
+            <img src="imagenes/Adorno de Pluma - U.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="element">
+        <h3>Adornos (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/Adorno Volcanico - U.jpg" alt="">
+            <img src="imagenes/Adorno de Ojo - B.jpg" alt="">
+            <img src="imagenes/Adorno de Ojo - U.jpg" alt="">
+            <img src="imagenes/Adorno de Garra - U.jpg" alt="">
+        </div>
+    </div>
+
+    <button onclick="backToSubcategories('syrus-subcategories')">Volver a Subcategorías</button>
+</div>
+
+<!-- Elementos de Hojas - Galaden -->
+<div id="hojas-galaden" class="element-page" style="display:none;">
+    <h2>Elementos de Hojas</h2>
+
+    <!-- Hojas (Normales) -->
+    <div class="element">
+        <h3>Hojas</h3>
+        <div class="images">
+            <img src="imagenes/hoja1.jpg" alt="">
+            <img src="imagenes/hoja2.jpg" alt="">
+            <img src="imagenes/hoja3.jpg" alt="">
+            <img src="imagenes/hoja4.jpg" alt="">
+            <img src="imagenes/hoja5.jpg" alt="">
+            <img src="imagenes/hoja6.jpg" alt="">
+            <img src="imagenes/hoja7.jpg" alt="">
+            <img src="imagenes/hoja8.jpg" alt="">
+        </div>
+    </div>
+
+ <!-- Hojas (Crafteables) -->
+<div class="element">
+    <h3>Hojas (Crafteables)</h3>
+    <div class="images">
+        <img src="imagenes/hoja-craft1.jpg" alt="">
+        <img src="imagenes/hoja-craft2.jpg" alt="">
+        <img src="imagenes/hoja-craft3.jpg" alt="">
+        <img src="imagenes/hoja-craft4.jpg" alt="">
+        <img src="imagenes/hoja-craft5.jpg" alt="">
+        <img src="imagenes/hoja-craft6.jpg" alt="">
+        <img src="imagenes/hoja-craft7.jpg" alt="">
+        <img src="imagenes/hoja-craft8.jpg" alt="">
+    </div>
+</div>
+
+<!-- Armas Secundarias -->
+<div class="element">
+    <h3>Armas Secundarias</h3>
+    <div class="images">
+        <img src="imagenes/arma-secundaria1.jpg" alt="">
+        <img src="imagenes/arma-secundaria2.jpg" alt="">
+        <img src="imagenes/arma-secundaria3.jpg" alt="">
+        <img src="imagenes/arma-secundaria4.jpg" alt="">
+        <img src="imagenes/arma-secundaria5.jpg" alt="">
+        <img src="imagenes/arma-secundaria6.jpg" alt="">
+        <img src="imagenes/arma-secundaria7.jpg" alt="">
+        <img src="imagenes/arma-secundaria8.jpg" alt="">
+    </div>
+</div>
+
+<!-- Armas Secundarias (Crafteables) -->
+<div class="element">
+    <h3>Armas Secundarias (Crafteables)</h3>
+    <div class="images">
+        <img src="imagenes/arma-secundaria-craft1.jpg" alt="">
+        <img src="imagenes/arma-secundaria-craft2.jpg" alt="">
+        <img src="imagenes/arma-secundaria-craft3.jpg" alt="">
+        <img src="imagenes/arma-secundaria-craft4.jpg" alt="">
+        <img src="imagenes/arma-secundaria-craft5.jpg" alt="">
+        <img src="imagenes/arma-secundaria-craft6.jpg" alt="">
+        <img src="imagenes/arma-secundaria-craft7.jpg" alt="">
+        <img src="imagenes/arma-secundaria-craft8.jpg" alt="">
+    </div>
+</div>
+
+<!-- Puños -->
+<div class="element">
+    <h3>Puños</h3>
+    <div class="images">
+        <img src="imagenes/puno1.jpg" alt="">
+        <img src="imagenes/puno2.jpg" alt="">
+        <img src="imagenes/puno3.jpg" alt="">
+        <img src="imagenes/puno4.jpg" alt="">
+        <img src="imagenes/puno5.jpg" alt="">
+        <img src="imagenes/puno6.jpg" alt="">
+        <img src="imagenes/puno7.jpg" alt="">
+        <img src="imagenes/puno8.jpg" alt="">
+    </div>
+</div>
+
+<!-- Puños (Crafteables) -->
+<div class="element">
+    <h3>Puños (Crafteables)</h3>
+    <div class="images">
+        <img src="imagenes/puno-craft1.jpg" alt="">
+        <img src="imagenes/puno-craft2.jpg" alt="">
+        <img src="imagenes/puno-craft3.jpg" alt="">
+        <img src="imagenes/puno-craft4.jpg" alt="">
+        <img src="imagenes/puno-craft5.jpg" alt="">
+        <img src="imagenes/puno-craft6.jpg" alt="">
+        <img src="imagenes/puno-craft7.jpg" alt="">
+        <img src="imagenes/puno-craft8.jpg" alt="">
+    </div>
+</div>
+
+<button onclick="backToSubcategories('galaden-subcategories')">Volver a Subcategorías</button>
+</div>
+
+<!-- Elementos de Arcos - Galaden -->
+<div id="arcos-galaden" class="element-page" style="display:none;">
+    <h2>Elementos de Arcos</h2>
+
+    <!-- Arcos (Normales) -->
+    <div class="element">
+        <h3>Arcos</h3>
+        <div class="images">
+            <img src="imagenes/arco1.jpg" alt="">
+            <img src="imagenes/arco2.jpg" alt="">
+            <img src="imagenes/arco3.jpg" alt="">
+            <img src="imagenes/arco4.jpg" alt="">
+            <img src="imagenes/arco5.jpg" alt="">
+            <img src="imagenes/arco6.jpg" alt="">
+            <img src="imagenes/arco7.jpg" alt="">
+            <img src="imagenes/arco8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Arcos (Crafteables) -->
+    <div class="element">
+        <h3>Arcos (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/arco-craft1.jpg" alt="">
+            <img src="imagenes/arco-craft2.jpg" alt="">
+            <img src="imagenes/arco-craft3.jpg" alt="">
+            <img src="imagenes/arco-craft4.jpg" alt="">
+            <img src="imagenes/arco-craft5.jpg" alt="">
+            <img src="imagenes/arco-craft6.jpg" alt="">
+            <img src="imagenes/arco-craft7.jpg" alt="">
+            <img src="imagenes/arco-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Cuerdas -->
+    <div class="element">
+        <h3>Cuerdas</h3>
+        <div class="images">
+            <img src="imagenes/cuerda1.jpg" alt="">
+            <img src="imagenes/cuerda2.jpg" alt="">
+            <img src="imagenes/cuerda3.jpg" alt="">
+            <img src="imagenes/cuerda4.jpg" alt="">
+            <img src="imagenes/cuerda5.jpg" alt="">
+            <img src="imagenes/cuerda6.jpg" alt="">
+            <img src="imagenes/cuerda7.jpg" alt="">
+            <img src="imagenes/cuerda8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Cuerdas (Crafteables) -->
+    <div class="element">
+        <h3>Cuerdas (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/cuerda-craft1.jpg" alt="">
+            <img src="imagenes/cuerda-craft2.jpg" alt="">
+            <img src="imagenes/cuerda-craft3.jpg" alt="">
+            <img src="imagenes/cuerda-craft4.jpg" alt="">
+            <img src="imagenes/cuerda-craft5.jpg" alt="">
+            <img src="imagenes/cuerda-craft6.jpg" alt="">
+            <img src="imagenes/cuerda-craft7.jpg" alt="">
+            <img src="imagenes/cuerda-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Flechas -->
+    <div class="element">
+        <h3>Flechas</h3>
+        <div class="images">
+            <img src="imagenes/flecha1.jpg" alt="">
+            <img src="imagenes/flecha2.jpg" alt="">
+            <img src="imagenes/flecha3.jpg" alt="">
+            <img src="imagenes/flecha4.jpg" alt="">
+            <img src="imagenes/flecha5.jpg" alt="">
+            <img src="imagenes/flecha6.jpg" alt="">
+            <img src="imagenes/flecha7.jpg" alt="">
+            <img src="imagenes/flecha8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Flechas (Crafteables) -->
+    <div class="element">
+        <h3>Flechas (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/flecha-craft1.jpg" alt="">
+            <img src="imagenes/flecha-craft2.jpg" alt="">
+            <img src="imagenes/flecha-craft3.jpg" alt="">
+            <img src="imagenes/flecha-craft4.jpg" alt="">
+            <img src="imagenes/flecha-craft5.jpg" alt="">
+            <img src="imagenes/flecha-craft6.jpg" alt="">
+            <img src="imagenes/flecha-craft7.jpg" alt="">
+            <img src="imagenes/flecha-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <button onclick="backToSubcategories('galaden-subcategories')">Volver a Subcategorías</button>
+</div>
+
+	<!-- Elementos de Campanas - Vaerix -->
+<div id="campanas-vaerix" class="element-page" style="display:none;">
+    <h2>Elementos de Campanas - Vaerix</h2>
+
+    <!-- Campanas (Normales) -->
+    <div class="element">
+        <h3>Campanas</h3>
+        <div class="images">
+            <img src="imagenes/Campana de Guerra Espinada - U.jpg" alt="">
+            <img src="imagenes/Camapana de Guerra Aullante - B.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Campanas (Crafteables) -->
+    <div class="element">
+        <h3>Campanas (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/Campana de Guerra Dorada - U.jpg" alt="">
+            <img src="imagenes/Camapana de Guerra de Clarin - U.jpg" alt="">
+            <img src="imagenes/Camapana de Guerra Aullante - U.jpg" alt="">
+    </div>
+
+    <!-- Agarres -->
+    <div class="element">
+        <h3>Agarres</h3>
+        <div class="images">
+            <img src="imagenes/Agarre de Espolon - B.jpg" alt="">
+            <img src="imagenes/Agarre Enjoyado - U.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Agarres (Crafteables) -->
+    <div class="element">
+        <h3>Agarres (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/Agarre de Alivio - B.jpg" alt="">
+            <img src="imagenes/Agarre de Alivio - U.jpg" alt="">
+            <img src="imagenes/Agarre de Pinchos - B.jpg" alt="">
+            <img src="imagenes/Agarre de Pinchos - U.jpg" alt="">
+            <img src="imagenes/Agarre de Espolon - U.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Mangos -->
+    <div class="element">
+        <h3>Mangos</h3>
+        <div class="images">
+            <img src="imagenes/Mango Reforzado - U.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Mangos (Crafteables) -->
+    <div class="element">
+        <h3>Mangos (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/Mango Inscrito - B.jpg" alt="">
+            <img src="imagenes/Mango Inscrito - U.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+    <button onclick="backToSubcategories('vaerix-subcategories')">Volver a Subcategorías</button>
+</div>
+
+	<!-- Elementos de Lanzas - Vaerix -->
+<div id="lanzas-vaerix" class="element-page" style="display:none;">
+<h2>Elementos de Lanzas - Vaerix</h2>
+    <div class="element">
+        <h3>Lanzas</h3>
+        <div class="images">
+            <img src="imagenes/Lanza de Forjado Solar - B.jpg" alt="">
+            <img src="imagenes/Lanza de Torrentera - U.jpg" alt="">
+        </div>
+    </div>
+    <div class="element">
+        <h3>Lanzas (Crafteables)</h3>
+        <div class="images">
+        </div>
+    </div>
+
+    <!-- Mangos -->
+    <div class="element">
+        <h3>Mangos</h3>
+        <div class="images">
+            <img src="imagenes/Asta Superior - B.jpg" alt="">
+            <img src="imagenes/Asta Retorcida - B.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Mangos (Crafteables) -->
+    <div class="element">
+        <h3>Mangos (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/Asta Grabada - B.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Colas -->
+    <div class="element">
+        <h3>Colas</h3>
+        <div class="images">
+            <img src="imagenes/Cola de la Serpiente - B.jpg" alt="">
+            <img src="imagenes/Cola Anclada - B.jpg" alt="">
+            <img src="imagenes/Cola del Anochecer - U.jpg" alt="">		
+        </div>
+    </div>
+
+    <!-- Colas (Crafteables) -->
+    <div class="element">
+        <h3>Colas (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/Cola Radiante - B.jpg" alt="">
+            <img src="imagenes/Cola Radiante - U.jpg" alt="">
+            <img src="imagenes/Cola Mordiente - U.jpg" alt="">
+        </div>
+    </div>
+
+    <button onclick="backToSubcategories('vaerix-subcategories')">Volver a Subcategorías</button>
+</div>
+
+<!-- Elementos de Martillos - Kehli -->
+<div id="martillos-kehli" class="element-page" style="display:none;">
+    <h2>Elementos de Martillos - Kehli</h2>
+
+    <!-- Martillos (Normales) -->
+    <div class="element">
+        <h3>Martillos</h3>
+        <div class="images">
+            <img src="imagenes/martillo1.jpg" alt="">
+            <img src="imagenes/martillo2.jpg" alt="">
+            <img src="imagenes/martillo3.jpg" alt="">
+            <img src="imagenes/martillo4.jpg" alt="">
+            <img src="imagenes/martillo5.jpg" alt="">
+            <img src="imagenes/martillo6.jpg" alt="">
+            <img src="imagenes/martillo7.jpg" alt="">
+            <img src="imagenes/martillo8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Martillos (Crafteables) -->
+    <div class="element">
+        <h3>Martillos (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/martillo-craft1.jpg" alt="">
+            <img src="imagenes/martillo-craft2.jpg" alt="">
+            <img src="imagenes/martillo-craft3.jpg" alt="">
+            <img src="imagenes/martillo-craft4.jpg" alt="">
+            <img src="imagenes/martillo-craft5.jpg" alt="">
+            <img src="imagenes/martillo-craft6.jpg" alt="">
+            <img src="imagenes/martillo-craft7.jpg" alt="">
+            <img src="imagenes/martillo-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Mangos -->
+    <div class="element">
+        <h3>Mangos</h3>
+        <div class="images">
+            <img src="imagenes/mango-martillo1.jpg" alt="">
+            <img src="imagenes/mango-martillo2.jpg" alt="">
+            <img src="imagenes/mango-martillo3.jpg" alt="">
+            <img src="imagenes/mango-martillo4.jpg" alt="">
+            <img src="imagenes/mango-martillo5.jpg" alt="">
+            <img src="imagenes/mango-martillo6.jpg" alt="">
+            <img src="imagenes/mango-martillo7.jpg" alt="">
+            <img src="imagenes/mango-martillo8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Mangos (Crafteables) -->
+    <div class="element">
+        <h3>Mangos (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/mango-martillo-craft1.jpg" alt="">
+            <img src="imagenes/mango-martillo-craft2.jpg" alt="">
+            <img src="imagenes/mango-martillo-craft3.jpg" alt="">
+            <img src="imagenes/mango-martillo-craft4.jpg" alt="">
+            <img src="imagenes/mango-martillo-craft5.jpg" alt="">
+            <img src="imagenes/mango-martillo-craft6.jpg" alt="">
+            <img src="imagenes/mango-martillo-craft7.jpg" alt="">
+            <img src="imagenes/mango-martillo-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Agarres -->
+    <div class="element">
+        <h3>Agarres</h3>
+        <div class="images">
+            <img src="imagenes/agarrre-martillo1.jpg" alt="">
+            <img src="imagenes/agarrre-martillo2.jpg" alt="">
+            <img src="imagenes/agarrre-martillo3.jpg" alt="">
+            <img src="imagenes/agarrre-martillo4.jpg" alt="">
+            <img src="imagenes/agarrre-martillo5.jpg" alt="">
+            <img src="imagenes/agarrre-martillo6.jpg" alt="">
+            <img src="imagenes/agarrre-martillo7.jpg" alt="">
+            <img src="imagenes/agarrre-martillo8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Agarres (Crafteables) -->
+    <div class="element">
+        <h3>Agarres (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/agarrre-martillo-craft1.jpg" alt="">
+            <img src="imagenes/agarrre-martillo-craft2.jpg" alt="">
+            <img src="imagenes/agarrre-martillo-craft3.jpg" alt="">
+            <img src="imagenes/agarrre-martillo-craft4.jpg" alt="">
+            <img src="imagenes/agarrre-martillo-craft5.jpg" alt="">
+            <img src="imagenes/agarrre-martillo-craft6.jpg" alt="">
+            <img src="imagenes/agarrre-martillo-craft7.jpg" alt="">
+            <img src="imagenes/agarrre-martillo-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <button onclick="backToSubcategories('kehli-subcategories')">Volver a Subcategorías</button>
+</div>
+
+<!-- Elementos de Ballestas - Kehli -->
+<div id="ballestas-kehli" class="element-page" style="display:none;">
+    <h2>Elementos de Ballestas - Kehli</h2>
+
+    <!-- Ballestas (Normales) -->
+    <div class="element">
+        <h3>Ballestas</h3>
+        <div class="images">
+            <img src="imagenes/ballesta1.jpg" alt="">
+            <img src="imagenes/ballesta2.jpg" alt="">
+            <img src="imagenes/ballesta3.jpg" alt="">
+            <img src="imagenes/ballesta4.jpg" alt="">
+            <img src="imagenes/ballesta5.jpg" alt="">
+            <img src="imagenes/ballesta6.jpg" alt="">
+            <img src="imagenes/ballesta7.jpg" alt="">
+            <img src="imagenes/ballesta8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Ballestas (Crafteables) -->
+    <div class="element">
+        <h3>Ballestas (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/ballesta-craft1.jpg" alt="">
+            <img src="imagenes/ballesta-craft2.jpg" alt="">
+            <img src="imagenes/ballesta-craft3.jpg" alt="">
+            <img src="imagenes/ballesta-craft4.jpg" alt="">
+            <img src="imagenes/ballesta-craft5.jpg" alt="">
+            <img src="imagenes/ballesta-craft6.jpg" alt="">
+            <img src="imagenes/ballesta-craft7.jpg" alt="">
+            <img src="imagenes/ballesta-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Culatas -->
+    <div class="element">
+        <h3>Culatas</h3>
+        <div class="images">
+            <img src="imagenes/culata1.jpg" alt="">
+            <img src="imagenes/culata2.jpg" alt="">
+            <img src="imagenes/culata3.jpg" alt="">
+            <img src="imagenes/culata4.jpg" alt="">
+            <img src="imagenes/culata5.jpg" alt="">
+            <img src="imagenes/culata6.jpg" alt="">
+            <img src="imagenes/culata7.jpg" alt="">
+            <img src="imagenes/culata8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Culatas (Crafteables) -->
+    <div class="element">
+        <h3>Culatas (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/culata-craft1.jpg" alt="">
+            <img src="imagenes/culata-craft2.jpg" alt="">
+            <img src="imagenes/culata-craft3.jpg" alt="">
+            <img src="imagenes/culata-craft4.jpg" alt="">
+            <img src="imagenes/culata-craft5.jpg" alt="">
+            <img src="imagenes/culata-craft6.jpg" alt="">
+            <img src="imagenes/culata-craft7.jpg" alt="">
+            <img src="imagenes/culata-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Virotes -->
+    <div class="element">
+        <h3>Virotes</h3>
+        <div class="images">
+            <img src="imagenes/virote1.jpg" alt="">
+            <img src="imagenes/virote2.jpg" alt="">
+            <img src="imagenes/virote3.jpg" alt="">
+            <img src="imagenes/virote4.jpg" alt="">
+            <img src="imagenes/virote5.jpg" alt="">
+            <img src="imagenes/virote6.jpg" alt="">
+            <img src="imagenes/virote7.jpg" alt="">
+            <img src="imagenes/virote8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Virotes (Crafteables) -->
+    <div class="element">
+        <h3>Virotes (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/virote-craft1.jpg" alt="">
+            <img src="imagenes/virote-craft2.jpg" alt="">
+            <img src="imagenes/virote-craft3.jpg" alt="">
+            <img src="imagenes/virote-craft4.jpg" alt="">
+            <img src="imagenes/virote-craft5.jpg" alt="">
+            <img src="imagenes/virote-craft6.jpg" alt="">
+            <img src="imagenes/virote-craft7.jpg" alt="">
+            <img src="imagenes/virote-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <button onclick="backToSubcategories('kehli-subcategories')">Volver a Subcategorías</button>
+</div>
+
+<!-- Elementos de Guanteletes - Venturoso -->
+<div id="guanteletes-venturoso" class="element-page" style="display:none;">
+    <h2>Elementos de Guanteletes - Venturoso</h2>
+
+    <!-- Guanteletes (Normales) -->
+    <div class="element">
+        <h3>Guanteletes</h3>
+        <div class="images">
+            <img src="imagenes/guantelete1.jpg" alt="">
+            <img src="imagenes/guantelete2.jpg" alt="">
+            <img src="imagenes/guantelete3.jpg" alt="">
+            <img src="imagenes/guantelete4.jpg" alt="">
+            <img src="imagenes/guantelete5.jpg" alt="">
+            <img src="imagenes/guantelete6.jpg" alt="">
+            <img src="imagenes/guantelete7.jpg" alt="">
+            <img src="imagenes/guantelete8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Guanteletes (Crafteables) -->
+    <div class="element">
+        <h3>Guanteletes (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/guantelete-craft1.jpg" alt="">
+            <img src="imagenes/guantelete-craft2.jpg" alt="">
+            <img src="imagenes/guantelete-craft3.jpg" alt="">
+            <img src="imagenes/guantelete-craft4.jpg" alt="">
+            <img src="imagenes/guantelete-craft5.jpg" alt="">
+            <img src="imagenes/guantelete-craft6.jpg" alt="">
+            <img src="imagenes/guantelete-craft7.jpg" alt="">
+            <img src="imagenes/guantelete-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Guantes -->
+    <div class="element">
+        <h3>Guantes</h3>
+        <div class="images">
+            <img src="imagenes/guante1.jpg" alt="">
+            <img src="imagenes/guante2.jpg" alt="">
+            <img src="imagenes/guante3.jpg" alt="">
+            <img src="imagenes/guante4.jpg" alt="">
+            <img src="imagenes/guante5.jpg" alt="">
+            <img src="imagenes/guante6.jpg" alt="">
+            <img src="imagenes/guante7.jpg" alt="">
+            <img src="imagenes/guante8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Guantes (Crafteables) -->
+    <div class="element">
+        <h3>Guantes (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/guante-craft1.jpg" alt="">
+            <img src="imagenes/guante-craft2.jpg" alt="">
+            <img src="imagenes/guante-craft3.jpg" alt="">
+            <img src="imagenes/guante-craft4.jpg" alt="">
+            <img src="imagenes/guante-craft5.jpg" alt="">
+            <img src="imagenes/guante-craft6.jpg" alt="">
+            <img src="imagenes/guante-craft7.jpg" alt="">
+            <img src="imagenes/guante-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Brazaletes -->
+    <div class="element">
+        <h3>Brazaletes</h3>
+        <div class="images">
+            <img src="imagenes/brazalete1.jpg" alt="">
+            <img src="imagenes/brazalete2.jpg" alt="">
+            <img src="imagenes/brazalete3.jpg" alt="">
+            <img src="imagenes/brazalete4.jpg" alt="">
+            <img src="imagenes/brazalete5.jpg" alt="">
+            <img src="imagenes/brazalete6.jpg" alt="">
+            <img src="imagenes/brazalete7.jpg" alt="">
+            <img src="imagenes/brazalete8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Brazaletes (Crafteables) -->
+    <div class="element">
+        <h3>Brazaletes (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/brazalete-craft1.jpg" alt="">
+            <img src="imagenes/brazalete-craft2.jpg" alt="">
+            <img src="imagenes/brazalete-craft3.jpg" alt="">
+            <img src="imagenes/brazalete-craft4.jpg" alt="">
+            <img src="imagenes/brazalete-craft5.jpg" alt="">
+            <img src="imagenes/brazalete-craft6.jpg" alt="">
+            <img src="imagenes/brazalete-craft7.jpg" alt="">
+            <img src="imagenes/brazalete-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <button onclick="backToSubcategories('venturoso-subcategories')">Volver a Subcategorías</button>
+</div>
+
+<!-- Elementos de Cuchillos - Venturoso -->
+<div id="cuchillos-venturoso" class="element-page" style="display:none;">
+    <h2>Elementos de Cuchillos - Venturoso</h2>
+
+    <!-- Cuchillos (Normales) -->
+    <div class="element">
+        <h3>Cuchillos</h3>
+        <div class="images">
+            <img src="imagenes/cuchillo1.jpg" alt="">
+            <img src="imagenes/cuchillo2.jpg" alt="">
+            <img src="imagenes/cuchillo3.jpg" alt="">
+            <img src="imagenes/cuchillo4.jpg" alt="">
+            <img src="imagenes/cuchillo5.jpg" alt="">
+            <img src="imagenes/cuchillo6.jpg" alt="">
+            <img src="imagenes/cuchillo7.jpg" alt="">
+            <img src="imagenes/cuchillo8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Cuchillos (Crafteables) -->
+    <div class="element">
+        <h3>Cuchillos (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/cuchillo-craft1.jpg" alt="">
+            <img src="imagenes/cuchillo-craft2.jpg" alt="">
+            <img src="imagenes/cuchillo-craft3.jpg" alt="">
+            <img src="imagenes/cuchillo-craft4.jpg" alt="">
+            <img src="imagenes/cuchillo-craft5.jpg" alt="">
+            <img src="imagenes/cuchillo-craft6.jpg" alt="">
+            <img src="imagenes/cuchillo-craft7.jpg" alt="">
+            <img src="imagenes/cuchillo-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Agarres -->
+    <div class="element">
+        <h3>Agarres</h3>
+        <div class="images">
+            <img src="imagenes/agarrre-cuchillo1.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo2.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo3.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo4.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo5.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo6.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo7.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Agarres (Crafteables) -->
+    <div class="element">
+        <h3>Agarres (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/agarrre-cuchillo-craft1.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo-craft2.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo-craft3.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo-craft4.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo-craft5.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo-craft6.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo-craft7.jpg" alt="">
+            <img src="imagenes/agarrre-cuchillo-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Cinturones -->
+    <div class="element">
+        <h3>Cinturones</h3>
+        <div class="images">
+            <img src="imagenes/cinturon1.jpg" alt="">
+            <img src="imagenes/cinturon2.jpg" alt="">
+            <img src="imagenes/cinturon3.jpg" alt="">
+            <img src="imagenes/cinturon4.jpg" alt="">
+            <img src="imagenes/cinturon5.jpg" alt="">
+            <img src="imagenes/cinturon6.jpg" alt="">
+            <img src="imagenes/cinturon7.jpg" alt="">
+            <img src="imagenes/cinturon8.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Cinturones (Crafteables) -->
+    <div class="element">
+        <h3>Cinturones (Crafteables)</h3>
+        <div class="images">
+            <img src="imagenes/cinturon-craft1.jpg" alt="">
+            <img src="imagenes/cinturon-craft2.jpg" alt="">
+            <img src="imagenes/cinturon-craft3.jpg" alt="">
+            <img src="imagenes/cinturon-craft4.jpg" alt="">
+            <img src="imagenes/cinturon-craft5.jpg" alt="">
+            <img src="imagenes/cinturon-craft6.jpg" alt="">
+            <img src="imagenes/cinturon-craft7.jpg" alt="">
+            <img src="imagenes/cinturon-craft8.jpg" alt="">
+        </div>
+    </div>
+
+    <button onclick="backToSubcategories('venturoso-subcategories')">Volver a Subcategorías</button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
